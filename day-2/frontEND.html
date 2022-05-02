@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="same.css">
+</head>
+<body>
+    <div id="navBar">
+        <div> <a href="backEnd.html">BackEnd</a> </div>
+        <div> <a href="frontEND.html">FrontEnd</a> </div>
+    </div>
+
+    <div id="masai_investors"></div>
+</body>
+</html>
+
+<script>
+
+
+
+  var investor_Arr = JSON.parse(localStorage.getItem("investorsData")) || []
+
+
+  investor_Arr.forEach(function(el){
+
+var div_tag = document.createElement("div");
+
+var invesrtor_image = document.createElement("img");
+invesrtor_image.setAttribute("src", el.investorImage);
+invesrtor_image.style.borderTopLeftRadius= "10px"
+invesrtor_image.style.borderTopRightRadius= "10px"
+invesrtor_image.style.height="250px"
+var investor_heading = document.createElement("h3");
+investor_heading.style.textAlign="center"
+investor_heading.innerText= el.investorName;
+var investor_para = document.createElement("p");
+investor_para.innerText= el.investorRole;
+var inverstor_logo = document.createElement("img");
+inverstor_logo.style.height="50px"
+inverstor_logo.setAttribute("src",el.investorLogo);
+
+div_tag.append(invesrtor_image,investor_heading,investor_para,inverstor_logo)
+document.querySelector("#masai_investors").append(div_tag)
+
+});
+
+
+
+</script>
