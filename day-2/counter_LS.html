@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Likes or Dislikes</title>
+</head>
+<body>
+
+    <h1></h1>
+    <button id="incre">Increment</button>
+    <button id="decre">Decrement</button>
+
+</body>
+</html>
+
+<script>
+
+
+
+var count= localStorage.getItem("counter")|| 0
+
+
+document.querySelector("h1").innerText = count
+
+
+document.querySelector("#incre").addEventListener("click", increFun)
+
+function increFun(){
+
+    document.querySelector("h1").innerText = count
+    count++
+    localStorage.setItem("counter",count)
+
+
+
+}
+
+document.querySelector("#decre").addEventListener("click", decreFun)
+
+function decreFun(){
+    document.querySelector("h1").innerText = count
+    count--
+    localStorage.setItem("counter",count)
+    
+}
+
+
+
+</script>
